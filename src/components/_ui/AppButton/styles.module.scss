@@ -1,0 +1,9 @@
+@import '_styles/variables';
+@import '_styles/mixins';
+
+.btnPrimary {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: .5rem 1rem;
+}

@@ -1,0 +1,16 @@
+@import "_styles/variables";
+@import "_styles/mixins";
+
+.mainLayout{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex: 1 auto;
+}
+
+.footer{
+  flex: 0 auto;
+}

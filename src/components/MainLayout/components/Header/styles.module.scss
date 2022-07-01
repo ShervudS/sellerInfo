@@ -1,0 +1,32 @@
+@import "_styles/variables";
+@import "_styles/mixins";
+
+.header {
+  padding: 1.5rem 0;
+  background-color: $color-bg-5db;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font: normal 500 2rem/120% $font-01;
+  color: #ffffff;
+}
+
+.control {
+  display: flex;
+  gap: 2rem;
+}
+
+.currentDate {
+  display: flex;
+  align-items: center;
+  font: normal 600 2rem/120% $font-01;
+}
+
+.settingsBtn {
+  color: $color-font;
+}

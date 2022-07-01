@@ -1,0 +1,8 @@
+@mixin transition-mixin($properties, $duration: .3s, $timing: ease, $delay: 0s ) {
+  $transition: ();
+  @each $property in $properties {
+    $transition: append($transition, ($property $duration $timing), $separator: comma)
+  }
+  transition: $transition;
+}
+

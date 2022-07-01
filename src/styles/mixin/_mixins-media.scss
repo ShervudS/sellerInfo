@@ -1,0 +1,63 @@
+@use 'sass:math';
+
+// == [breakpoints]
+// phones
+$xs: 320px;
+$xsm: 375px;
+$sm: 576px;
+
+// tablets
+$md: 768px;
+
+// laptops
+$lg: 1024px;
+
+// desktops
+$xl: 1280px;
+$xl2: 1440px;
+$xl3: 1600px;
+$ul: 1920px;
+
+$breakpoints: ($xs, $xsm, $sm, $md, $lg, $xl, $xl2, $xl3, $ul);
+
+// == [media queries]
+@mixin media-width($width, $type: max) {
+    @if $type == max {
+        $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+        @content;
+    }
+}
+
+@mixin media-height($height, $type: max) {
+    @if $type == max {
+        $height: $height - 1px;
+    }
+
+    @media (#{$type}-height: $height) {
+        @content;
+    }
+}
+
+@function responsive-size(
+    $maxWidthSize,
+    $minWidthSize,
+    $max-viewport: 1920,
+    $min-viewport: 1440,
+    $pixelsPerRem: 10
+) {
+    $minWidth: math.div($min-viewport, $pixelsPerRem);
+    $maxWidth: math.div($max-viewport, $pixelsPerRem);
+
+    $slope: math.div($maxWidthSize - $minWidthSize, $maxWidth - $minWidth);
+    $yAxisIntersection: -$minWidth * $slope + $minWidthSize;
+    $result: clamp(
+        #{$minWidthSize}rem,
+        #{$yAxisIntersection}rem + #{$slope * 100}vw,
+        #{$maxWidthSize}rem
+    );
+
+    @return $result;
+}

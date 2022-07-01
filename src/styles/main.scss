@@ -1,0 +1,56 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+@import './fonts';
+
+// == [global styles]
+html {
+  height: 100%;
+  font-size: 10px; // = 1rem
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  background-color: $color-bg;
+  font: normal 400 1rem/1.2 $font-01;
+  color: $color-font;
+  scroll-behavior: smooth;
+
+  & > div[id="app"] {
+    height: 100%;
+  }
+}
+
+// == [input styles]
+input,
+textarea,
+select {
+  border-radius: 0;
+  caret-color: $color-bg;
+  -webkit-appearance: none;
+
+  &:-webkit-autofill {
+    &,
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 100px $color-font inset;
+      background-color: $color-font !important;
+      filter: none;
+      caret-color: $color-bg;
+      transition: background-color 10000s ease-in-out 0s;
+      -webkit-text-fill-color: $color-bg;
+
+      &::first-line {
+        // the same as input fonts
+        font: normal 400 2.4rem/1.3 $font-02;
+      }
+    }
+  }
+}
+
+/*
+    no classes in global.scss!
+    classes are only used in scss-modules
+    => for using localIdentName
+*/

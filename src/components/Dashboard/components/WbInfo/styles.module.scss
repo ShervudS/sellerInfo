@@ -1,0 +1,96 @@
+@import "_styles/variables";
+@import "_styles/mixins";
+
+.infoContainer {
+  padding-top: 1.6rem;
+  border-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font: normal 600 2.5rem/120% $font-01;
+  margin-bottom: 1.5rem;
+}
+
+.control {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background-color: $color-bg-5db;
+
+  & > span {
+    font: normal 400 1.8rem/120% $font-01;
+  }
+}
+
+.controlField{
+  span{
+    margin-right: .5rem;
+    font: normal 400 1.5rem/120% $font-01;
+  }
+
+  input {
+    padding: .5rem;
+    border-radius: .5rem;
+  }
+}
+
+.reloadedButton{
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid #828282;
+  border-radius: .5rem;
+  color: #828282;
+  padding: .5rem;
+  @include transition-mixin($properties: border-color color);
+
+  &:hover,
+  &:active {
+    border-color: $color-font;
+    color: $color-font;
+  }
+}
+
+.settingsButton {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid #828282;
+  border-radius: .5rem;
+  color: #828282;
+  padding: .5rem;
+  @include transition-mixin($properties: border-color color);
+
+  &:hover,
+  &:active {
+    border-color: $color-font;
+    color: $color-font;
+  }
+}
+
+.chart {
+  position: relative;
+  width: 100%;
+  max-height: 30rem;
+  height: 100%;
+  margin-bottom: 1rem;
+  background-color: $color-bg-5db;
+}
+
+.orderList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 35rem));
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.cardOrderInfo {
+  width: 100%;
+  border-radius: 1.5rem;
+  background-color: $color-bg-5db;
+  padding: 1.5rem;
+}
