@@ -1,5 +1,5 @@
-# AppTemplate
-## Package
+# sellerInfo
+## Stack
 - TypeScript
 - React
 - Redux toolkit
